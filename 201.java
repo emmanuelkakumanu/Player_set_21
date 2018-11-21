@@ -13,7 +13,11 @@ class Cat
 		int n=s.nextInt();
 		if(n==0)
 		System.out.print("1");
-		if(n>=1)
+		if(n==1 || n==2)
+		{
+			System.out.print("1 1");
+		}
+		if(n>2)
 		{
 			System.out.print("1 1");
 			for(int j=2;j<=n;j++)
