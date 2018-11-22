@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -28,19 +27,29 @@ class Ideone
 			}
 			count[k++]=cnt;
 		}
-		//System.out.print(Arrays.toString(count));
 		
-		HashMap<String, Integer> map = new HashMap<>(); 
+		//System.out.println(Arrays.toString(count));
+		HashMap<Integer,String> map=new HashMap<>();
 		for(int i=0;i<n;i++)
 		{
-			map.put(str[i],count[i]);
+			map.put(count[i],str[i]);
 		}
-		Collections.sort(map);
-		for(int i=0;i<n;i++)
-		{
-			String tmp=map.get(count[i]);
-			System.out.print(tmp+" ");
-		}
+		//System.out.println(map);
+		ArrayList<Integer> ar=new ArrayList<>(map.keySet());
 		
+		Collections.sort(ar,Collections.reverseOrder());
+		//System.out.println(ar);
+		Iterator itr=ar.iterator();
+		String re[]=new String[n];k=0;
+		while(itr.hasNext())
+		{
+			int el=(Integer)itr.next();
+			re[k++]=map.get(el);
+		}
+		System.out.print(re[0]);
+		for(int i=1;i<k;i++)
+		System.out.print("\n"+re[i]);
+		
+
 	}
 }
