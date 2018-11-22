@@ -9,7 +9,7 @@ class Ideone
 	{
 		// your code goes here
 		Scanner s=new Scanner(System.in);
-		String str=s.next();
+		String str=s.nextLine();
 		String re=new String();
 		for(int i=0;i<str.length();i++)
 		{
